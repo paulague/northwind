@@ -1,0 +1,17 @@
+version: 2
+
+sources:
+    - name: northwind
+      description: This stores all tables from Northwind
+      tables:
+        - name: base_categories
+        - name: base_customers
+        - name: base_employee_territories
+        - name: base_employees
+        - name: base_order_details
+        - name: base_orders
+        - name: base_products
+        - name: base_regions
+        - name: base_shippers
+        - name: base_suppliers
+        - name: base_territories
