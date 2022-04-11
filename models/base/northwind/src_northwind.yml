@@ -5,13 +5,24 @@ sources:
       description: This stores all tables from Northwind
       tables:
         - name: base_categories
+          description: source of categories
         - name: base_customers
+          description: source of customers
         - name: base_employee_territories
+          description: source of employee_territories
         - name: base_employees
+          description: source of employees
         - name: base_order_details
+          description: source of order_details
         - name: base_orders
+          description: source of oders
         - name: base_products
+          description: source of products
         - name: base_regions
+          description: source of regions
         - name: base_shippers
+          description: source of shippers
         - name: base_suppliers
+          description: source of suppliers
         - name: base_territories
+          description: source of territories
