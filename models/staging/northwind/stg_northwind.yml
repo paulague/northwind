@@ -1,0 +1,41 @@
+version: 2
+
+models:
+    - name: stg_categories
+      columns:
+        - name: categoryID
+          description: Primary key of the table categories
+          tests: 
+            - unique
+            - not_null
+
+    - name: stg_suppliers
+      columns:
+        - name: supplierID
+          description: Primary key of the suppliers table 
+          tests: 
+            - unique
+            - not_null
+
+    - name: stg_products
+      columns:
+        - name: productID
+          description: Primary key of the products table
+          tests: 
+            - unique
+            - not_null
+        - name: categoryID
+          description: Foreign key relating products table with categories table
+          tests:
+            - relationships:
+                to: ref('stg_categories')
+                field: categoryID   
+        - name: supplierID
+          description: Foreign key relating products table with supplier table
+          tests:
+            - relationships:
+                to: ref('stg_suppliers')
+                field: supplierID   
+
+
+            
