@@ -1,4 +1,5 @@
 select
     territoryID,
-    territoryDescription as name
+    territoryDescription as name,
+    regionID
 from {{ ref('base_territories')}}

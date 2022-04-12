@@ -1,0 +1,9 @@
+version: 2
+
+models:
+    - name: core_product
+      description: Information of each product (name, category, units info and supplier)
+
+models:
+    - name: core_employee
+      description: Information of each employee (name, city, region and territory)

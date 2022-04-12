@@ -37,4 +37,8 @@ models:
       core:
         +materialize: table
     staging:
-      +materialize: view
+      northwind:
+        +materialize: view
+    base:
+      northwind:
+        +materialize: view

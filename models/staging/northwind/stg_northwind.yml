@@ -37,5 +37,34 @@ models:
                 to: ref('stg_suppliers')
                 field: supplierID   
 
+    - name: stg_employees
+      columns:
+        - name: territoryID
+          description: Foreign key relating employees table with territories table
+          tests:
+            - relationships:
+                to: ref('stg_territories')
+                field: territoryID   
 
-            
+    - name: stg_territories
+      columns:
+        - name: territoryID
+          description: Primary key of the territories table 
+          tests: 
+            - unique
+            - not_null
+        - name: regionID
+          description: Foreign key relating territories table with regions table
+          tests:
+            - relationships:
+                to: ref('stg_regions')
+                field: regionID  
+
+    - name: stg_regions
+      columns:
+        - name: regionID
+          description: Primary key of the region table
+          tests: 
+            - unique
+            - not_null
+        
