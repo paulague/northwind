@@ -1,0 +1,27 @@
+version: 2
+
+models:
+    - name: base_categories
+      description: Copy of the raw categories data 
+    - name: base_customers
+      description: Copy of the raw customers data 
+    - name: base_employee_territories
+      description: Copy of the raw employee_territories data
+    - name: base_employees
+      description: Copy of the raw employees data
+    - name: base_order_details
+      description: Copy of the raw order_details data
+    - name: base_orders
+      description: Copy of the raw orders data
+    - name: base_products
+      description: Copy of the raw products data
+    - name: base_regions
+      description: Copy of the raw regions data
+    - name: base_shippers
+      description: Copy of the raw shippers data
+    - name: base_suppliers
+      description: Copy of the raw suppliers data
+    - name: base_territories
+      description: Copy of the raw territories data
+ 
+ 

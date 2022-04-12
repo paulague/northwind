@@ -12,4 +12,4 @@ select
     shipCity as city,
     shipRegion as Region,
     shipPostalCode as postalCode
-from {{ ref('base_orders')}}
+from {{ ref('base_orders') }}

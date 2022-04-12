@@ -2,8 +2,53 @@ version: 2
 
 models:
     - name: core_product
-      description: Information of each product (name, category, units info and supplier)
+      description: Data of each product, joining products, categories and suppliers information
+      columns:
+        - name: product
+          description: From products table
+        - name: category
+          description: From categories table
+        - name: quantityPerUnit
+          description: From product table
+        - name: unitPrice
+          description: From product table
+        - name: unitsInStock
+          description: From product table
+        - name: unitsOnOrder
+          description: From product table
+        - name: company
+          description: From suppliers table
+        - name: contact
+          description: From suppliers table
 
-models:
     - name: core_employee
-      description: Information of each employee (name, city, region and territory)
+      description: Data of each employee, joining employees, regions and territories imformation
+      columns:
+        - name: firstName
+          description: From employee table
+        - name: lastName
+          description: From employee table
+        - name: city
+          description: From employee table
+        - name: region
+          description: From regions table
+        - name: territory
+          description: From territories table
+
+    - name: core_orders
+      description: Data of each order, joining employees, customer and shippers information
+      columns:
+        - name: orderID
+          description: From order table
+        - name: orderDate
+          description: From order table
+        - name: shippedDate
+          description: From order table
+        - name: requiredDate
+          description: From order table
+        - name: company_customer
+          description: From customer table
+        - name: employee
+          description: From employees table
+        - name: company_shipper
+          description: From shippers table

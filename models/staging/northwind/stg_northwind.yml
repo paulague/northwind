@@ -2,22 +2,29 @@ version: 2
 
 models:
     - name: stg_categories
+      description: Staging model of categories
       columns:
         - name: categoryID
-          description: Primary key of the table categories
+          description: Primary key of the categories table
           tests: 
             - unique
             - not_null
+        - name: name
+          description: Renamed categoryName -> name
 
     - name: stg_suppliers
+      description: Staging model of suppliers
       columns:
         - name: supplierID
           description: Primary key of the suppliers table 
           tests: 
             - unique
             - not_null
+        - name: street
+          description: Renamed address -> street
 
     - name: stg_products
+      description: Staging model of products
       columns:
         - name: productID
           description: Primary key of the products table
@@ -36,17 +43,28 @@ models:
             - relationships:
                 to: ref('stg_suppliers')
                 field: supplierID   
+        - name: name
+          description: Renamed productName -> name
 
     - name: stg_employees
+      description: Staging model of employees
       columns:
+        - name: employeeID
+          description: Primary key of the territories table 
+          tests: 
+            - unique
+            - not_null
         - name: territoryID
           description: Foreign key relating employees table with territories table
           tests:
             - relationships:
                 to: ref('stg_territories')
-                field: territoryID   
+                field: territoryID 
+        - name: street
+          description: Renamed address -> street  
 
     - name: stg_territories
+      description: Staging model of territories
       columns:
         - name: territoryID
           description: Primary key of the territories table 
@@ -61,10 +79,64 @@ models:
                 field: regionID  
 
     - name: stg_regions
+      description: Staging model of regions
       columns:
         - name: regionID
-          description: Primary key of the region table
+          description: Primary key of the regions table
           tests: 
             - unique
             - not_null
+        - name: name
+          description: Renamed territoryDescription -> name
+
+    - name: stg_customers
+      description: Staging model of customers
+      columns:
+        - name: customerID
+          description: Primary key of the customers table
+          tests: 
+            - unique
+            - not_null
+        - name: street
+          description: Renamed address -> street
+
+    - name: stg_shippers
+      description: Staging model of shippers
+      columns:
+        - name: shipperID
+          description: Primary key of the shippers table
+          tests: 
+            - unique
+            - not_null
+
+    - name: stg_order_details
+      description: Staging model of order_details
+      columns:
+        - name: productID
+          description: Foreign key relating order_details table with product table
+
+    - name: stg_orders
+      description: Staging model of orders
+      columns:
+        - name: orderID
+          description: Primary key of the orders table
+          tests: 
+            - unique
+            - not_null
+        - name: customerID
+          description: Foreign key relating customers table with orders table 
+        - name: employeeID
+          description: Foreign key relating employees table with orders table 
+        - name: shipVia
+          description: Foreign key relating shippers table with orders table 
+        - name: street
+          description: Renamed shipAddress -> street
+        - name: city
+          description: Renamed shipCity -> city
+        - name: region
+          description: Renamed shipRegion -> region
+        - name: postalCode
+          description: Renamed shipPostalCode -> postalCode
+        - name: country
+          description: Renamed shipCountry -> country
         

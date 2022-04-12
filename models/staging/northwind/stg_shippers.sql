@@ -1,3 +1,3 @@
 select
     *
-from {{ ref('base_shippers')}}
+from {{ ref('base_shippers') }}

@@ -9,4 +9,4 @@ select
     postalCode,
     country,
     phone
-from {{ ref('base_suppliers')}}
+from {{ ref('base_suppliers') }}
