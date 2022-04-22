@@ -5,7 +5,7 @@ with order as (
 ),
 
 employee as (
-    select * from {{ ref('stg_employees') }}
+    select * from {{ ref('core_employee') }}
 ),
 
 customer as (

@@ -12,7 +12,8 @@ territory as (
     select * from {{ ref('stg_territories') }}
 )
 
-select e.firstName,
+select e.employeeID,
+    e.firstName,
     e.lastName,
     e.city,
     r.name as region,
